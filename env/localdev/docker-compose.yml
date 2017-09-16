@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  nginxlb:
+    image: yourregistry.com/nginx:czexample
+    depends_on: # So that phpapp up first
+      - phpapp
+    ports: # To expose container port 80 on host 8722
+      - "8722:80"
+
+  phpapp:
+    image: yourregistry.com/php-7.1.6:czexample
+    expose: # To expose to other services e.g. nginx
+      - "9000"
+    volumes:
+      - ../../phpcode:/opt/example
