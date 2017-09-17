@@ -2,6 +2,9 @@
 
 ## Usage
 ```
+git clone https://github.com/chenze/docker-compose-example
+cd docker-compose-example
+
 # Only need to run make image once.
 # This is going to take some time if you did not run it before
 make image
